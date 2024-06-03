@@ -437,10 +437,8 @@ template {
   line-height: 1.29;
   margin-bottom: 14px;
   font-size: 14px; }
-  .description-block__text:nth-of-type(2) {
-    display: none; }
 
-.description-block__hide {
+.description-block__text--hide-mobile {
   display: none; }
 
 .description-block__btn {
@@ -520,7 +518,9 @@ template {
       max-width: calc(100% - 13%); }
       .description-block__text:nth-of-type(2) {
         display: block; }
-    .description-block__hide {
+    .description-block__text--hide-mobile {
+      display: none; }
+    .description-block__text--hide-tablet {
       display: none; }
     .description-block__img {
       width: 100%;
@@ -579,7 +579,9 @@ template {
     max-width: 490px; }
     .description-block__text:nth-of-type(2) {
       display: block; }
-  .description-block__hide {
+  .description-block__text--hide-mobile {
+    display: inline-block; }
+  .description-block__text--hide-tablet {
     display: inline; }
   .description-block__img {
     max-width: 532px; } }
@@ -709,6 +711,7 @@ template {
 
 @media (min-width: 1440px) {
   .asside {
+    height: 100%;
     overflow-y: hidden;
     opacity: 1;
     grid-row: 1/4;
@@ -718,6 +721,7 @@ template {
     .asside__container {
       margin-bottom: 37px; }
   .asside-block {
+    min-height: 0;
     box-shadow: none;
     max-width: 305px;
     min-width: 0px;
@@ -729,14 +733,16 @@ template {
   .logo {
     padding: 0; }
     .logo::before {
-      display: none; } }
+      display: none; }
+  .navigation {
+    margin: 0 0 200px 0; } }
 
 .container__slider {
   margin-bottom: 24px; }
 
 .repair__top {
   background: linear-gradient(270deg, #F8F8F8 0%, #FFFFFF 98.61%);
-  padding: 16px 0;
+  padding: 16px;
   margin-bottom: 16px; }
 
 .repair__title {
@@ -807,7 +813,7 @@ template {
   .container__button {
     margin-bottom: 32px; }
   .repair__top {
-    padding: 16px 0px;
+    padding: 16px 24px;
     margin-bottom: 20px; }
   .swiper {
     width: 100%;
@@ -819,11 +825,9 @@ template {
     .swiper__inner {
       margin-bottom: 24px; }
   .swiper-slide__wrapper {
-    min-width: 224px;
-    max-width: 240px; }
+    min-width: 224px; }
   .swiper-slide__repair {
-    min-width: 224px;
-    max-width: 240px; }
+    min-width: 224px; }
   .swiper-slide__wrapper--hide-tablet {
     display: none; }
   .swiper-pagination {
@@ -860,7 +864,7 @@ template {
     .container__button {
       margin-bottom: 50px; }
   .repair__top {
-    padding: 16px 0px; }
+    padding: 16px 32px; }
   .swiper__inner {
     margin-bottom: 32px; }
   .swiper-wrapper {
@@ -871,7 +875,7 @@ template {
   .swiper-slide__repair {
     min-width: 240px; }
   .swiper-slide__wrapper--hide-tablet {
-    display: flex; }
+    display: block; }
   .swiper-slide__wrapper--hide-desctop {
     display: none; }
   .clicked.cards-open::before {
