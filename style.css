@@ -711,17 +711,17 @@ template {
 
 @media (min-width: 1440px) {
   .asside {
+    width: 305px;
     height: 100%;
     overflow-y: hidden;
     opacity: 1;
-    grid-row: 1/4;
     position: relative;
-    display: block;
+    background: none;
+    position: fixed;
     transform: translateX(0); }
     .asside__container {
       margin-bottom: 37px; }
   .asside-block {
-    min-height: 0;
     box-shadow: none;
     max-width: 305px;
     min-width: 0px;
@@ -733,9 +733,7 @@ template {
   .logo {
     padding: 0; }
     .logo::before {
-      display: none; }
-  .navigation {
-    margin: 0 0 200px 0; } }
+      display: none; } }
 
 .container__slider {
   margin-bottom: 24px; }
@@ -828,6 +826,8 @@ template {
     min-width: 224px; }
   .swiper-slide__repair {
     min-width: 224px; }
+  .swiper-slide__wrapper--hide-tablet-brand {
+    display: none; }
   .swiper-slide__wrapper--hide-tablet {
     display: none; }
   .swiper-pagination {
@@ -851,7 +851,11 @@ template {
       height: 10px;
       background: url(./static/icon.svg) no-repeat;
       transition: 0.4s; }
-  .clicked.cards-open::before {
+  .clicked.cards-open--brand::before {
+    content: '';
+    transform: rotate(180deg);
+    transition: 0.4s; }
+  .clicked.cards-open--repair::before {
     content: '';
     transform: rotate(180deg);
     transition: 0.4s; } }
@@ -874,11 +878,19 @@ template {
     min-width: 240px; }
   .swiper-slide__repair {
     min-width: 240px; }
+  .swiper-slide__wrapper--hide-tablet-brand {
+    display: block; }
   .swiper-slide__wrapper--hide-tablet {
     display: block; }
+  .swiper-slide__wrapper--hide-desctop-brand {
+    display: none; }
   .swiper-slide__wrapper--hide-desctop {
     display: none; }
-  .clicked.cards-open::before {
+  .clicked.cards-open--brand::before {
+    content: '';
+    transform: rotate(180deg);
+    transition: 0.4s; }
+  .clicked.cards-open--repair::before {
     content: '';
     transform: rotate(180deg);
     transition: 0.4s; } }
@@ -1347,9 +1359,7 @@ body.hidden {
 
 @media (min-width: 1440px) {
   .wrapper {
-    display: grid;
-    grid-template-columns: 305px 1120px;
-    justify-content: center; } }
+    padding: 0 0 0 305px; } }
 
 
 /*# sourceMappingURL=style.css.map*/
